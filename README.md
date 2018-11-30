@@ -1,6 +1,6 @@
-#### Make a Jazz Lyric Python Web Project - makejazzlyricwebapp
+#### Make a Jazz Lyric Python Web App Project
 
-This is web project that asks the user to enter a vowel 
+This is web app project that asks the user to enter a vowel 
 and to click the Create button.
 
 The app creates a jazz phrase & reports the number of vowels in the phrase.
