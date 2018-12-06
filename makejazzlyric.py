@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -9,8 +9,9 @@ def entry_page() -> 'html':
     return render_template('entry.html',
                            the_title='Make a Jazz Lyric Web App')
 
+
 def create_lyric() -> str:
-    
+
 
 
 if __name__ == '__main__':
