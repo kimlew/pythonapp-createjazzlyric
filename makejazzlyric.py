@@ -12,6 +12,7 @@ def entry_page() -> 'html':
 
 def create_lyric() -> str:
     vowel = request.form['vowel']
+    return vowel
 
 
 if __name__ == '__main__':
