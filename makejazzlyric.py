@@ -9,6 +9,10 @@ def entry_page() -> 'html':
     return render_template('entry.html',
                            the_title='Make a Jazz Lyric Web App')
 
+def create_lyric() -> str:
+    
+
+
 if __name__ == '__main__':
     #  app.config['dbconfig'] = connDict
     app.run(debug=True)
