@@ -18,8 +18,9 @@ def entry_page() -> 'html':
 
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
+    title = 'Here is the vowel you typed:'
     vowel = request.form['vowel']
-    return vowel
+    return render_template('results.html', the_title=title, the_vowel=vowel,)
 
 
 if __name__ == '__main__':
