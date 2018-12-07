@@ -10,6 +10,7 @@ def entry_page() -> 'html':
                            the_title='Make a Jazz Lyric Web App')
 
 
+@app.route('/show_lyric')
 def create_lyric() -> str:
     vowel = request.form['vowel']
     return vowel
