@@ -20,7 +20,8 @@ def entry_page() -> 'html':
 def create_lyric() -> str:
     title = 'The Vowel You Chose'
     vowel = request.form['vowel']
-    lyric = "Sh" + vowel + vowel + " b" + vowel + vowel + " z" + vowel + vowel + vowel
+    lyric = "Sh" + vowel + vowel + " b" + vowel + vowel + " z" + vowel + vowel + vowel +\
+            " d" + vowel + vowel + vowel + vowel + vowel + vowel + vowel
     return render_template('results.html', the_title=title, the_vowel=vowel, the_lyric=lyric,)
 
 
