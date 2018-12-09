@@ -21,7 +21,7 @@ def create_lyric() -> str:
     title = 'The Vowel You Chose'
     vowel = request.form['vowel']
     lyric = "Sh" + vowel + vowel + " b" + vowel + vowel + " z" + vowel + vowel + vowel
-    return render_template('results.html', the_title=title, the_vowel=vowel,)
+    return render_template('results.html', the_title=title, the_vowel=vowel, the_lyric=lyric,)
 
 
 if __name__ == '__main__':
