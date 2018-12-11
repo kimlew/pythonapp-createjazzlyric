@@ -22,7 +22,8 @@ def create_lyric() -> str:
     vowel1 = request.form['vowel1']
 
     lyric = "Sh" + (vowel1*2) +\
-            " b" + (vowel1*4) +\
+            " b" + (vowel1*4) + \
+            " d" + (vowel1 * 3) + \
             " z" + "eee" +\
             " d" + (vowel1*9) + "..."
     return render_template('results.html', the_title=title, the_vowel1=vowel1, the_lyric=lyric,)
