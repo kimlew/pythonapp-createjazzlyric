@@ -19,7 +19,7 @@ def entry_page() -> 'html':
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
     title = 'New Jazz Lyric'
-    vowel = request.form['vowel']
+    vowel1 = request.form['vowel1']
     lyric = "Sh" + vowel + vowel + " b" + vowel + vowel + " z" + vowel + vowel + vowel +\
             " d" + vowel + vowel + vowel + vowel + vowel + vowel + vowel + "..."
     return render_template('results.html', the_title=title, the_vowel=vowel, the_lyric=lyric,)
