@@ -27,7 +27,7 @@ def create_lyric() -> str:
             " d" + (vowel2 * 3) + \
             " z" + "eee" +\
             " d" + (vowel1*9) + "..."
-    return render_template('results.html', the_title=title, the_vowel1=vowel1, the_lyric=lyric,)
+    return render_template('results.html', the_title=title, the_vowel1=vowel1, the_vowel2=vowel2, the_lyric=lyric,)
 
 
 if __name__ == '__main__':
