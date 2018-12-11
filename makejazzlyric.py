@@ -20,10 +20,11 @@ def entry_page() -> 'html':
 def create_lyric() -> str:
     title = 'New Jazz Lyric'
     vowel1 = request.form['vowel1']
+    vowel2 = request.form['vowel2']
 
     lyric = "Sh" + (vowel1*2) +\
             " b" + (vowel1*4) + \
-            " d" + (vowel1 * 3) + \
+            " d" + (vowel2 * 3) + \
             " z" + "eee" +\
             " d" + (vowel1*9) + "..."
     return render_template('results.html', the_title=title, the_vowel1=vowel1, the_lyric=lyric,)
