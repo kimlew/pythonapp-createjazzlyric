@@ -17,14 +17,25 @@ form {
 }
 
 table {
+  margin-left:      20px;
+  margin-right:     20px;
+  caption-side:     bottom;
+  border-collapse:  collapse;
+}
+td, th {
+  padding:          5px;
+  text-align:       left;
+}
+/*
+table {
   table-layout: fixed;
-  width: 400px;
+  width: 100%;
   margin-left:      20px;
   margin-right:     20px;
   font-size:        1em;
   background-color: #A2DED3; /* Seafoam blue-green. */
   border:           1px solid #909090; /* Medium grey. */
-  /*color:            #2a2a2a;  Dark grey. */
+  /*color:            #2a2a2a;  Dark grey.
   padding:          4px 4px 2px;
   border-collapse:collapse;
 }
@@ -36,6 +47,23 @@ td, th {
   text-align:       left;
   border:           thin dotted gray;
 }
+*/
+
+/*** Tables ***/
+table {
+  font-size:          1em;
+  background-color:   #fafcff;
+  border:             1px solid #909090;
+  color:              #2a2a2a;
+  padding:            5px 5px 2px;
+  border-collapse:    collapse;
+}
+
+  td, th {
+  border:             thin dotted gray;
+}
+
+/*** Inputs ***/
 input[type=text] {
   font-size:        115%;
   width:            30em;
