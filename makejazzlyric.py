@@ -23,11 +23,11 @@ def create_lyric() -> str:
     vowel2 = request.form['vowel2']
 
     # Shoo dap ba diii *eeeeeee...
-    lyric = "Shoo" +\
+    lyric = " Shoo" +\
             " d" + (vowel1) + "p"\
             " b" + (vowel1 * 2) + \
             " d" + (vowel2 * 4) +\
-            " z" + ("e" * 6) + "..."
+            " z" + ("e" * 6) + "... "
     return render_template('results.html', the_title=title, the_vowel1=vowel1, the_vowel2=vowel2, the_lyric=lyric,)
 
 
