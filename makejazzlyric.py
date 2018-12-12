@@ -21,17 +21,19 @@ def create_lyric() -> str:
     title = 'New Jazz Lyric'
     vowel1 = request.form['vowel1']
     vowel2 = request.form['vowel2']
+    vowel2_amount = request.form['vowel2_amount']
     consonant = request.form['consonant']
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shoo" +\
             " d" + (vowel1) + "p" +\
             " b" + (vowel1 * 2) + " " +\
-            consonant + (vowel2 * 4) +\
+            consonant + (vowel2 * vowel2_amount) +\
             " z" + ("e" * 6) + "... "
     return render_template('results.html', the_title=title,
                            the_vowel1=vowel1, the_vowel2=vowel2,
-                           the_consonant=consonant, the_lyric=lyric,)
+                           the_vowel2_amount=vowel2_amount, the_consonant=consonant,
+                           the_lyric=lyric,)
 
 
 if __name__ == '__main__':
