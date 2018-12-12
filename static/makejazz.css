@@ -18,29 +18,30 @@ form {
 
 table {
   table-layout: fixed;
-  width: 300px;
+  width: 400px;
   margin-left:      20px;
   margin-right:     20px;
   font-size:        1em;
   background-color: #A2DED3; /* Seafoam blue-green. */
   border:           1px solid #909090; /* Medium grey. */
   /*color:            #2a2a2a;  Dark grey. */
-  padding:          2px 2px 2px 2px;
+  padding:          4px 4px 2px;
   border-collapse:collapse;
 }
 tr {
   width: 100%;
 }
 td, th {
-  min-width: 50px;
-  max-width: 100px;
   padding:          5px;
   text-align:       left;
   border:           thin dotted gray;
 }
-input {
-  min-width: 5px;
-  max-width: 10px;
+input[type=text] {
+  font-size:        115%;
+  width:            30em;
+}
+input[type=submit] {
+  font-size:        125%;
 }
 
 a {
