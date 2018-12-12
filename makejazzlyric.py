@@ -28,7 +28,7 @@ def create_lyric() -> str:
     lyric = " Shoo" +\
             " d" + (vowel1) + "p" +\
             " b" + (vowel1 * 2) + " " +\
-            consonant + (vowel2 * vowel2_amount) +\
+            consonant + (vowel2 * int(vowel2_amount)) +\
             " z" + ("e" * 6) + "... "
     return render_template('results.html', the_title=title,
                            the_vowel1=vowel1, the_vowel2=vowel2,
