@@ -25,6 +25,7 @@ table {
 td, th {
   padding:          5px;
   text-align:       left;
+  white-space: nowrap;
 }
 /*
 table {
@@ -66,7 +67,7 @@ table {
 /*** Inputs ***/
 input[type=text] {
   font-size:        115%;
-  width:            30em;
+  width:            5em;
 }
 input[type=submit] {
   font-size:        125%;
