@@ -11,6 +11,7 @@ body {
 }
 h2 {
   font-size:        140%;
+  color:            #004c54; /* Darker Peacock blue */
 }
 form {
   width: 300px;
@@ -27,35 +28,12 @@ td, th {
   text-align:       left;
   white-space: nowrap;
 }
-/*
-table {
-  table-layout: fixed;
-  width: 100%;
-  margin-left:      20px;
-  margin-right:     20px;
-  font-size:        1em;
-  background-color: #A2DED3; /* Seafoam blue-green. */
-  border:           1px solid #909090; /* Medium grey. */
-  /*color:            #2a2a2a;  Dark grey.
-  padding:          4px 4px 2px;
-  border-collapse:collapse;
-}
-tr {
-  width: 100%;
-}
-td, th {
-  padding:          5px;
-  text-align:       left;
-  border:           thin dotted gray;
-}
-*/
 
 /*** Tables ***/
 table {
   font-size:          1em;
-  background-color:   #fafcff;
-  border:             1px solid #909090;
-  color:              #2a2a2a;
+  background-color:   #fafcff;              /* Seafoam blue-green. */
+  border:             1px solid #909090;    /* Medium grey. */
   padding:            5px 5px 2px;
   border-collapse:    collapse;
 }
@@ -74,7 +52,7 @@ input[type=submit] {
 }
 
 a {
-  text-decoration:  none;
+  text-decoration:  underline;;
   font-weight:      200;
 }
 a:hover {
