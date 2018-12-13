@@ -30,10 +30,18 @@ def create_lyric() -> str:
             " b" + (vowel1 * 2) + " " +\
             consonant + (vowel2 * int(vowel2_amount)) +\
             " z" + ("e" * 8) + "... "
+
+    vowel_count = count_vowels(lyric)
+
     return render_template('results.html', the_title=title,
                            the_vowel1=vowel1, the_vowel2=vowel2,
                            the_vowel2_amount=vowel2_amount, the_consonant=consonant,
-                           the_lyric=lyric,)
+                           the_lyric=lyric, the_vowel_count=vowel_count,)
+
+
+def count_vowels(str) -> str:
+    vowel_count = 0
+    return vowel_count
 
 
 if __name__ == '__main__':
