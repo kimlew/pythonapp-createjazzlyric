@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h2>{{ the_title }}</h2>
+<h2>{{ the_lyric_params['the_title'] }}</h2>
 
 <p>You entered:</p>
 <p>
-    <b>Vowel 1:</b> {{ the_vowel1 }}
-    <b>Vowel 2:</b> {{ the_vowel2 }}
-    <b>Number of Vowel 2s:</b> {{ the_vowel2_amount }}
-    <b>Consonant:</b> {{ the_consonant }}
+    <b>Vowel 1:</b> {{ the_lyric_params['the_vowel1'] }}
+    <b>Vowel 2:</b> {{ the_lyric_params['the_vowel2'] }}
+    <b>Number of Vowel 2s:</b> {{ the_lyric_params['the_vowel2_amount'] }}
+    <b>Consonant:</b> {{ the_lyric_params['the_consonant'] }}
 </p>
 
 
 <p>Your jazz lyric is:</p>
 <table>
-    <tr><td><h3>&#127926;<i>{{ the_lyric }}</i>&#127926;</h3></td></tr>
+    <tr><td><h3>&#127926;<i>{{ the_lyric_params['the_lyric'] }}</i>&#127926;</h3></td></tr>
 </table>
 
-<p>The number of vowels in your jazz lyric is : {{ the_vowel_count }} </p>
+<p>The number of vowels in your jazz lyric is : {{ the_lyric_params['the_vowel_count'] }} </p>
 
 <a href="/">Back</a>
 
