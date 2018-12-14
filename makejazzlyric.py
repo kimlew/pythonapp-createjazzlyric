@@ -10,10 +10,10 @@ def entry_page() -> 'html':
         vowel = request.form['vowel']
         # return redirect(url_for('show_lyric'))
         return render_template('entry.html',
-                           the_title='Make a Jazz Lyric Web App')
+                           the_title='Create a Jazz Lyric')
     else:
         return render_template('entry.html',
-                           the_title='Make a Jazz Lyric Web App')
+                           the_title='Create a Jazz Lyric')
 
 
 @app.route('/show_lyric', methods=['POST'])
