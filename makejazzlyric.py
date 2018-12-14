@@ -25,7 +25,7 @@ def create_lyric() -> str:
     consonant = request.form['consonant']
 
     # Shoo dap ba diii *eeeeeee...
-    lyric = " Shoo" +\
+    lyric = " Shooo" +\
             " d" + (vowel1) + "p" +\
             " b" + (vowel1 * 2) + " " +\
             consonant + (vowel2 * int(vowel2_amount)) +\
