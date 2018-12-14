@@ -49,6 +49,11 @@ def create_lyric() -> str:
 def count_vowels(lyric) -> str:
     vowels = set('aeiouy')
     vowel_count = 0
+
+    for item in lyric:
+        if item in vowels:
+            vowel_count = vowel_count + 1
+
     return vowel_count
 
 
