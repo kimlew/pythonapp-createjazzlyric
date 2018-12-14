@@ -33,10 +33,17 @@ def create_lyric() -> str:
 
     vowel_count = count_vowels(lyric)
 
-    return render_template('results.html', the_title=title,
-                           the_vowel1=vowel1, the_vowel2=vowel2,
-                           the_vowel2_amount=vowel2_amount, the_consonant=consonant,
-                           the_lyric=lyric, the_vowel_count=vowel_count,)
+    lyric_params = {
+        "the_title" :  title,
+        "the_vowel1" : vowel1,
+        "the_vowel2" : vowel2,
+        "the_vowel2_amount" : vowel2_amount,
+        "the_consonant" : consonant,
+        "the_lyric" : lyric,
+        "the_vowel_count" : vowel_count
+    }
+
+    return render_template('results.html', the_lyric_params=lyric_params,)
 
 
 def count_vowels(str) -> str:
