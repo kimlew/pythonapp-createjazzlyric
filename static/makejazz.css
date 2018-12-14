@@ -46,6 +46,7 @@ table {
 input[type=text] {
   font-size:        115%;
   width:            5em;
+  text-align:       center
 }
 input[type=submit] {
   font-size:        125%;
