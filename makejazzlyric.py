@@ -46,7 +46,8 @@ def create_lyric() -> str:
     return render_template('results.html', the_lyric_params=lyric_params,)
 
 
-def count_vowels(str) -> str:
+def count_vowels(lyric) -> str:
+    vowels = set('aeiouy')
     vowel_count = 0
     return vowel_count
 
