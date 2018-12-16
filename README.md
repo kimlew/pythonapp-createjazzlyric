@@ -1,4 +1,4 @@
-#### Make a Jazz Lyric Python Web App Project
+#### Create a Jazz Lyric Python Web App Project
 
 This is web app project that asks the user to enter a vowel 
 and to click the Create button to create a jazz lyric.
