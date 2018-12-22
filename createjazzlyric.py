@@ -67,4 +67,17 @@ def add_lyric_to_db() -> str:
     
 if __name__ == '__main__':
     #  app.config['dbconfig'] = connDict
+
+    # Test with:
+    # Import driver, establish connection & create cursor.
+    import mysql.connector
+    conn = mysql.connector.connect(**connDict)
+    cursor = conn.cursor()
+
+    _SQL = """SHOW DATABASES"""
+    cursor.execute(_SQL)
+    res = cursor.fetchall()
+    for row in res:
+        print(row)
+
     app.run(debug=True)
