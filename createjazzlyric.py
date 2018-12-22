@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from connVarsDict import connVarsDict
 
 app = Flask(__name__)
 
@@ -57,6 +58,13 @@ def count_vowels(lyric) -> str:
     return vowel_count
 
 
+def add_lyric_to_db() -> str:
+    # Import driver, establish connection & create cursor.
+    import mysql.connector
+    conn = mysql.connector.connect(**connVarsDict)
+    cursor = conn.cursor()
+
+    
 if __name__ == '__main__':
     #  app.config['dbconfig'] = connDict
     app.run(debug=True)
