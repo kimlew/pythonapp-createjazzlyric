@@ -22,6 +22,7 @@ def entry_page() -> 'html':
 def create_lyric() -> str:
     title = 'New Jazz Lyric'
     vowel_set = set('aeiouy')
+    consonant_set = set('bcdfghijklmnpqrstvwxz')
 
     vowel1 = request.form['vowel1'].lower()
     vowel2 = request.form['vowel2'].lower()
