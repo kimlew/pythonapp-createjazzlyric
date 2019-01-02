@@ -21,10 +21,12 @@ def entry_page() -> 'html':
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
     title = 'New Jazz Lyric'
-    vowel1 = request.form['vowel1']
-    vowel2 = request.form['vowel2']
-    vowel2_amount = request.form['vowel2_amount']
-    consonant = request.form['consonant']
+    vowel_set = set('aeiouy')
+
+    vowel1 = request.form['vowel1'].lower()
+    vowel2 = request.form['vowel2'].lower()
+    vowel2_amount = (int) (request.form['vowel2_amount'])
+    consonant = request.form['consonant'].lower()
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
