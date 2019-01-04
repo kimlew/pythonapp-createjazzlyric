@@ -28,6 +28,7 @@ def create_lyric() -> str:
     vowel2 = request.form['vowel2'].lower()
     vowel2_amount = (int) (request.form['vowel2_amount'])
     consonant = request.form['consonant'].lower()
+    
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
@@ -36,8 +37,19 @@ def create_lyric() -> str:
             consonant + (vowel2 * int(vowel2_amount)) +\
             " z" + ("e" * 8) + "... "
 
-    vowel_count = count_vowels(lyric)
+    conn = mysql.connector.connect(**connDict)
+    cursor = conn.cursor()
 
+    # TODO: Change this code block below for the INSERT INTO.
+    # _SQL = """SHOW DATABASES"""
+    # cursor.execute(_SQL)
+    # res = cursor.fetchall()
+    # for row in res:
+    #     print(row)
+
+#    cursor.execute(SQL, (1234,)
+
+    vowel_count = count_vowels(lyric)
     lyric_params = {
         "the_title" :  title,
         "the_vowel1" : vowel1,
@@ -74,13 +86,17 @@ if __name__ == '__main__':
     # Test with:
     # Import driver, establish connection & create cursor.
 
-    conn = mysql.connector.connect(**connDict)
-    cursor = conn.cursor()
+    # Put in main() temporarily - so runs immediately to see if MySQL works.
+    # If I put in Flask handler function that handles it for the page,
+    # I would have to run so it goes to the show_lyric page.
 
-    _SQL = """SHOW DATABASES"""
-    cursor.execute(_SQL)
-    res = cursor.fetchall()
-    for row in res:
-        print(row)
+    # conn = mysql.connector.connect(**connDict)
+    # cursor = conn.cursor()
+
+    # _SQL = """SHOW DATABASES"""
+    # cursor.execute(_SQL)
+    # res = cursor.fetchall()
+    # for row in res:
+    #     print(row)
 
     app.run(debug=True)
