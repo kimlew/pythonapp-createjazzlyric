@@ -40,6 +40,19 @@ def create_lyric() -> str:
         "need_consonant_msg": need_consonant_msg
     }
 
+    if vowel1 in vowel_set:
+        # Render entry page again & print('Enter a vowel.')
+        return render_template('results.html', the_msg_params=msg_params,)
+    if vowel2 in vowel_set:
+        # Render entry page again & print('Enter a vowel.')
+        return render_template('results.html', the_msg_params=msg_params,)
+    if 3 < vowel2_amount and vowel2_amount > 9:
+        # Render entry page again & print('Enter a number from 3-9.')
+        return render_template('results.html', the_msg_params=msg_params,)
+    if consonant == vowel_set:
+        # Render entry page again & print('Enter a consonant.')
+        return render_template('results.html', the_msg_params=msg_params,)
+
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
             " d" + (vowel1) + "p" +\
