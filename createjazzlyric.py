@@ -11,11 +11,9 @@ def entry_page() -> 'html':
     if request.method == 'POST':
         vowel = request.form['vowel']
         # return redirect(url_for('show_lyric'))
-        return render_template('entry.html',
-                           the_title='Create a Jazz Lyric')
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
     else:
-        return render_template('entry.html',
-                           the_title='Create a Jazz Lyric')
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
 
 
 @app.route('/show_lyric', methods=['POST'])
@@ -29,28 +27,18 @@ def create_lyric() -> str:
     vowel2_amount = (int) (request.form['vowel2_amount'])
     consonant = request.form['consonant'].lower()
 
-    need_vowel_msg = 'Enter a vowel.'
-    need_number_msg = 'Enter a number from 3-9.'
-    need_consonant_msg = 'Enter a consonant.'
-
-    msg_params = {
-        "need_vowel_msg" : need_vowel_msg,
-        "need_number_msg" : need_number_msg,
-        "need_consonant_msg" : need_consonant_msg
-    }
-
     if vowel1 in vowel_set:
         # Render entry page again & print('Enter a vowel.')
-        return render_template('results.html', the_msg_params=msg_params,)
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
     if vowel2 in vowel_set:
         # Render entry page again & print('Enter a vowel.')
-        return render_template('results.html', the_msg_params=msg_params,)
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
     if 3 < vowel2_amount and vowel2_amount > 9:
         # Render entry page again & print('Enter a number from 3-9.')
-        return render_template('results.html', the_msg_params=msg_params,)
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
     if consonant == vowel_set:
         # Render entry page again & print('Enter a consonant.')
-        return render_template('results.html', the_msg_params=msg_params,)
+        return render_template('entry.html', the_title='Create a Jazz Lyric',)
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
