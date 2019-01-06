@@ -13,13 +13,13 @@ def entry_page() -> 'html':
         "need_number_msg" : "",
         "need_consonant_msg" : ""
     }
-    
+
     if request.method == 'POST':
         vowel = request.form['vowel']
         # return redirect(url_for('show_lyric'))
-        return render_template('entry.html', the_title='Create a Jazz Lyric',)
+        return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
     else:
-        return render_template('entry.html', the_title='Create a Jazz Lyric',)
+        return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
 
 @app.route('/show_lyric', methods=['POST'])
