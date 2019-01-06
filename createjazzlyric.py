@@ -14,10 +14,10 @@ def entry_page() -> 'html':
         "need_consonant_msg" : ""
     }
 
-    if request.method == 'POST':
-        # return redirect(url_for('show_lyric'))
-        return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
-    
+    # if request.method == 'POST':
+    #     # return redirect(url_for('show_lyric'))
+    return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
+
 
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
