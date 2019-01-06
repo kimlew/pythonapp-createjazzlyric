@@ -30,9 +30,9 @@ def create_lyric() -> str:
     vowel2_amount = (int) (request.form['vowel2_amount'])
     consonant = request.form['consonant'].lower()
 
-    need_vowel_msg = 'Enter a vowel.'
-    need_number_msg = 'Enter a number from 3-9.'
-    need_consonant_msg = 'Enter a consonant.'
+    need_vowel_msg = 'You must enter a vowel.'
+    need_number_msg = 'You must enter a number from 3-9.'
+    need_consonant_msg = 'You must enter a consonant.'
     msg_params = {
         "need_vowel_msg": need_vowel_msg,
         "need_number_msg": need_number_msg,
