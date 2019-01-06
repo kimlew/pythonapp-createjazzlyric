@@ -8,6 +8,12 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/entry')
 def entry_page() -> 'html':
+    msg_params = {
+        "need_vowel_msg" : "",
+        "need_number_msg" : "",
+        "need_consonant_msg" : ""
+    }
+    
     if request.method == 'POST':
         vowel = request.form['vowel']
         # return redirect(url_for('show_lyric'))
