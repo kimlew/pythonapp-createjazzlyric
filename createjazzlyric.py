@@ -13,9 +13,6 @@ def entry_page() -> 'html':
         "need_number_msg" : "",
         "need_consonant_msg" : ""
     }
-
-    # if request.method == 'POST':
-    #     # return redirect(url_for('show_lyric'))
     return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
 
@@ -45,9 +42,11 @@ def create_lyric() -> str:
     if vowel2 in vowel_set:
         # Render entry page again & print('Enter a vowel.')
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
+
     if 3 < vowel2_amount and vowel2_amount > 9:
         # Render entry page again & print('Enter a number from 3-9.')
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
+
     if consonant == vowel_set:
         # Render entry page again & print('Enter a consonant.')
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
