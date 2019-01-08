@@ -30,6 +30,7 @@ def create_lyric() -> str:
     need_vowel_msg = 'You must enter a vowel.'
     need_number_msg = 'You must enter a number from 3-9.'
     need_consonant_msg = 'You must enter a consonant.'
+
     msg_params = {
         "need_vowel_msg": need_vowel_msg,
         "need_number_msg": need_number_msg,
@@ -47,7 +48,7 @@ def create_lyric() -> str:
         # Render entry page again & print('Enter a number from 3-9.')
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
-    if consonant == vowel_set:
+    if consonant == consonant_set:
         # Render entry page again & print('Enter a consonant.')
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
