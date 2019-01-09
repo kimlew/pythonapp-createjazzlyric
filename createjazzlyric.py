@@ -27,6 +27,8 @@ def create_lyric() -> str:
     vowel2_amount = (int) (request.form['vowel2_amount'])
     consonant = request.form['consonant'].lower()
 
+    error_count = 0
+
     msg_params = {
         "need_vowel_msg": "",
         "need_number_msg": "",
@@ -47,24 +49,24 @@ def create_lyric() -> str:
     if vowel1 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
         msg_params["need_vowel_msg"] = need_vowel_msg
-
+        error_count += 1
         #return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
     elif vowel2 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
         msg_params["need_vowel_msg"] = need_vowel_msg
-
+        error_count += 1
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
     elif vowel2_amount < 3 or vowel2_amount > 9:
         # Render entry page again & print('Enter a number from 3-9.')
         msg_params["need_number_msg"] = need_vowel_msg
-
+        error_count += 1
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
     elif consonant != consonant_set:
         # Render entry page again & print('Enter a consonant.')
         msg_params["need_consonant_msg"] = need_vowel_msg
-
+        error_count += 1
         return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params,)
 
     return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params, )
