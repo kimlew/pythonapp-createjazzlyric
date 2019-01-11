@@ -22,10 +22,13 @@ def create_lyric() -> str:
     vowel_set = set('aeiouy')
     consonant_set = set('bcdfghijklmnpqrstvwxz')
 
+    need_vowel_msg = 'You must enter a vowel.'
+    need_number_msg = 'You must enter a number from 3-9.'
+    need_consonant_msg = 'You must enter a consonant.'
+
     vowel1 = request.form['vowel1'].lower()
     vowel2 = request.form['vowel2'].lower()
     vowel2_amount = int(request.form['vowel2_amount'])
-
     consonant = request.form['consonant'].lower()
 
     error_count = 0
@@ -36,16 +39,11 @@ def create_lyric() -> str:
         "need_consonant_msg": ""
     }
 
-    need_vowel_msg = 'You must enter a vowel.'
-    need_number_msg = 'You must enter a number from 3-9.'
-    need_consonant_msg = 'You must enter a consonant.'
-
     msg_params = {
         "need_vowel_msg": need_vowel_msg,
         "need_number_msg": need_number_msg,
         "need_consonant_msg": need_consonant_msg
     }
-
 
     if vowel1 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
