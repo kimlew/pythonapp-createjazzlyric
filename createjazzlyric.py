@@ -95,7 +95,7 @@ def create_lyric() -> str:
         "the_vowel_count" : vowel_count
     }
 
-    return render_template('results.html', the_lyric_params=lyric_params,)
+    return render_template('show_lyric.html', the_lyric_params=lyric_params,)
 
 
 def count_vowels(lyric) -> str:
