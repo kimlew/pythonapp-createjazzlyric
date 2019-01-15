@@ -28,7 +28,13 @@ def create_lyric() -> str:
 
     vowel1 = request.form['vowel1'].lower()
     vowel2 = request.form['vowel2'].lower()
-    vowel2_amount = int(request.form['vowel2_amount'])
+
+    # Add try-catch block for when this field is empty string, ''.
+    try:
+        vowel2_amount = int(request.form['vowel2_amount'])
+    except:
+        print(Exception)
+
     consonant = request.form['consonant'].lower()
 
     error_count = 0
