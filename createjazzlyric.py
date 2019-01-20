@@ -19,8 +19,8 @@ def entry_page() -> 'html':
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
     title = 'New Jazz Lyric'
-    vowel_set = set('aeiouy')
-    consonant_set = set('bcdfghijklmnpqrstvwxz')
+    vowel_set = list('aeiouy')
+    consonant_set = list('bcdfghijklmnpqrstvwxz')
 
     need_vowel_msg = 'You must enter a vowel.'
     need_number_msg = 'You must enter a number from 3-9.'
@@ -53,6 +53,8 @@ def create_lyric() -> str:
 
     if vowel1 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
+        print("vowel1 is: ", vowel1)
+        print("vowel_set is: ", vowel_set)
         error_count += 1
         msg_params["need_vowel_msg"] = need_vowel_msg
 
@@ -72,7 +74,6 @@ def create_lyric() -> str:
         msg_params["need_consonant_msg"] = need_vowel_msg
 
     return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params, )
-
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
