@@ -40,7 +40,8 @@ def create_lyric() -> str:
     error_count = 0
 
     msg_params = {
-        "need_vowel_msg": "",
+        "need_vowel1_msg": "",
+        "need_vowel2_msg": "",
         "need_number_msg": "",
         "need_consonant_msg": ""
     }
@@ -50,12 +51,12 @@ def create_lyric() -> str:
         print("vowel1 is: ", vowel1)
         print("vowel_set is: ", vowel_set)
         error_count += 1
-        msg_params["need_vowel_msg"] = need_vowel_msg
+        msg_params["need_vowel1_msg"] = need_vowel_msg
 
     elif vowel2 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
         error_count += 1
-        msg_params["need_vowel_msg"] = need_vowel_msg
+        msg_params["need_vowel2_msg"] = need_vowel_msg
 
     elif vowel2_amount < 3 or vowel2_amount > 9:
         # Render entry page again & print('Enter a number from 3-9.')
