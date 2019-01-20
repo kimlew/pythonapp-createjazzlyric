@@ -75,7 +75,7 @@ def create_lyric() -> str:
 
     if error_count == 1 or error_count == 2 or error_count == 3 or \
                 error_count == 4:
-        return render_template('entry.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params, )
+        return render_template('create_lyric.html', the_title='Create a Jazz Lyric', the_msg_params=msg_params, )
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
