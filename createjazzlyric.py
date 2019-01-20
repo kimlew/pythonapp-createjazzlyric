@@ -45,12 +45,6 @@ def create_lyric() -> str:
         "need_consonant_msg": ""
     }
 
-    msg_params = {
-        "need_vowel_msg": need_vowel_msg,
-        "need_number_msg": need_number_msg,
-        "need_consonant_msg": need_consonant_msg
-    }
-
     if vowel1 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
         print("vowel1 is: ", vowel1)
