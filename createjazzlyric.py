@@ -9,7 +9,8 @@ app = Flask(__name__)
 @app.route('/entry')
 def entry_page() -> 'html':
     msg_params = {
-        "need_vowel_msg" : "",
+        "need_vowel1_msg" : "",
+        "need_vowel2_msg": "",
         "need_number_msg" : "",
         "need_consonant_msg" : ""
     }
