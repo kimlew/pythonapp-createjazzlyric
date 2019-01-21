@@ -30,6 +30,7 @@ def create_lyric() -> str:
 
     vowel1 = request.form['vowel1'].lower()
     vowel2 = request.form['vowel2'].lower()
+    vowel2_amount = 0
 
     # Add try-catch block for when this field is empty string, ''.
     try:
