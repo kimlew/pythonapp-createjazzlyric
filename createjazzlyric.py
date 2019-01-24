@@ -85,6 +85,15 @@ def create_lyric() -> str:
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
 
+    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES(lyric, now())"""
+
+    # cursor.execute(_SQL)
+
+    # Temporary Test to see output at Terminal vs checking database.
+    res = cursor.fetchall()
+    for row in res:
+        print(row)
+
     vowel_count = count_vowels(lyric)
     lyric_params = {
         "the_title" :  title,
