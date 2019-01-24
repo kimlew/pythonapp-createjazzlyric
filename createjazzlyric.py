@@ -86,7 +86,8 @@ def create_lyric() -> str:
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
 
-    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES(lyric, now())"""
+    now = datetime.now()
+    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES(lyric, now)"""
 
     # cursor.execute(_SQL)
 
