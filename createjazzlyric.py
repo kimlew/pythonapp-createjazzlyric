@@ -81,15 +81,16 @@ def create_lyric() -> str:
             " d" + (vowel1) + "p" +\
             " b" + (vowel1 * 2) + " " +\
             consonant + (vowel2 * int(vowel2_amount)) +\
-            " z" + ("e" * 8) + "... "
+            " z" + ("e" * 8) + \
+            "... "
 
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
 
-    now = datetime.now()
-    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES(lyric, now)"""
+    nowdatetime = datetime.now()
 
-    # cursor.execute(_SQL)
+    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES ('%s', '%s')"""
+    cursor.execute(_SQL, (lyric, nowdatetime))
 
     # Temporary Test to see output at Terminal vs checking database.
     res = cursor.fetchall()
