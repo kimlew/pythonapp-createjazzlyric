@@ -13,6 +13,7 @@ h2 {
   font-size:        140%;
   color:            #004c54; /* Darker Peacock blue */
 }
+
 form {
   width:            300px;
 }
@@ -29,6 +30,11 @@ td, th {
   white-space:      nowrap;
 }
 
+td.usermsg {
+  color: #D8000C; /* Strong red */
+  font-size: 80%;
+}
+
 /*** Tables ***/
 table {
   font-size:          1em;
@@ -38,7 +44,7 @@ table {
   border-collapse:    collapse;
 }
 
-  td, th {
+td, th {
   border:             thin dotted gray;
 }
 
