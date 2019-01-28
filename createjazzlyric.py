@@ -85,14 +85,17 @@ def create_lyric() -> str:
             "... "
 
     conn = mysql.connector.connect(**connDict)
-    cursor = conn.cursor()
+    try:
+        cursor = conn.cursor()
 
-    nowdatetime = datetime.now()
+        nowdatetime = datetime.now()
 
-    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
-    cursor.execute(_SQL, (lyric, nowdatetime))
+        _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
+        cursor.execute(_SQL, (lyric, nowdatetime))
 
-    conn.commit()
+        conn.commit()
+    finally:
+        conn.close()
 
     vowel_count = count_vowels(lyric)
     lyric_params = {
@@ -133,6 +136,16 @@ def create_song() -> str:
         "the_title" :  title,
     }
 
+    # conn = mysql.connector.connect(**connDict)
+    # cursor = conn.cursor()
+    #
+    # nowdatetime = datetime.now()
+    #
+    # _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
+    # cursor.execute(_SQL, (lyric, nowdatetime))
+    #
+    # conn.commit()
+    #
     # Use loop & retrieve
     # def show_song()
     #     for each row in lyric table
