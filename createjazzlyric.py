@@ -124,7 +124,31 @@ def add_lyric_to_db() -> str:
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
 
-    
+
+@app.route('/show_song', methods=['GET','POST'])
+def create_song() -> str:
+    title = 'Jazz Song'
+
+    song_params = {
+        "the_title" :  title,
+    }
+
+    # Use loop & retrieve
+    # def show_song()
+    #     for each row in lyric table
+    #     SELECT
+    #     lyric, EXTRACT(YEAR, MONTH, DAY
+    #     FROM
+    #     date_created) WHERE
+    #     date_deactivated is NOT
+    #     NULL
+    #     if row number is divisible by 4:
+    #         print('\n')
+    #   return all of that somehow.
+
+    return render_template('show_song.html', the_song_params=song_params,)
+
+
 if __name__ == '__main__':
     #  app.config['dbconfig'] = connDict
 
