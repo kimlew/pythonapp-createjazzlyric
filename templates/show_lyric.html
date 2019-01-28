@@ -3,22 +3,18 @@
 
 <h2>{{ the_lyric_params['the_title'] }}</h2>
 
-<p>You entered:</p>
-<p>
-    <b>Vowel 1:</b> {{ the_lyric_params['the_vowel1'] }}
-    <b>Vowel 2:</b> {{ the_lyric_params['the_vowel2'] }}
-    <b>Number of Vowel 2s:</b> {{ the_lyric_params['the_vowel2_amount'] }}
-    <b>Consonant:</b> {{ the_lyric_params['the_consonant'] }}
-</p>
-
-
-<p>Your jazz lyric is:</p>
 <table>
     <tr><td><h3>&#127926;<i>{{ the_lyric_params['the_lyric'] }}</i>&#127926;</h3></td></tr>
 </table>
 
-<p>The number of vowels in your jazz lyric is : {{ the_lyric_params['the_vowel_count'] }} </p>
+<p>Vowel 1: {{ the_lyric_params['the_vowel1'] }}</p>
+<p>Vowel 2: {{ the_lyric_params['the_vowel2'] }}</p>
+<p>Number of Vowel 2s: {{ the_lyric_params['the_vowel2_amount'] }}</p>
+<p>Consonant: {{ the_lyric_params['the_consonant'] }}</p>
 
-<a href="/">Back to Create a Jazz Lyric</a>
+<p>The number of vowels in your jazz lyric is: {{ the_lyric_params['the_vowel_count'] }} </p>
+
+<p><a href="/">Back to Create a Jazz Lyric</a></p>
+<p><a href="show_song.html">Go to Jazz Song</a></p>
 
 {% endblock %}
