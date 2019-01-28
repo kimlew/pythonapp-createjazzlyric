@@ -89,13 +89,8 @@ def create_lyric() -> str:
 
     nowdatetime = datetime.now()
 
-    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES ('%s', '%s')"""
+    _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
     cursor.execute(_SQL, (lyric, nowdatetime))
-
-    # Temporary Test to see output at Terminal vs checking database.
-    res = cursor.fetchall()
-    for row in res:
-        print(row)
 
     vowel_count = count_vowels(lyric)
     lyric_params = {
