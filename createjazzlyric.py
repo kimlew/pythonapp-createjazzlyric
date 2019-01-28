@@ -92,6 +92,8 @@ def create_lyric() -> str:
     _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
     cursor.execute(_SQL, (lyric, nowdatetime))
 
+    conn.commit()
+
     vowel_count = count_vowels(lyric)
     lyric_params = {
         "the_title" :  title,
