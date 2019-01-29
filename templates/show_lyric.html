@@ -15,6 +15,7 @@
 <p>The number of vowels in your jazz lyric is: {{ the_lyric_params['the_vowel_count'] }} </p>
 
 <p><a href="/">Back to Create a Jazz Lyric</a></p>
-<p><a href="show_song.html">Go to Jazz Song</a></p>
+<p><a href="{{ url_for('create_song') }}">Go to Jazz Song</a></p>
+
 
 {% endblock %}
