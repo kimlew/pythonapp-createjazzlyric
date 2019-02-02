@@ -155,19 +155,9 @@ def create_song() -> str:
 
     finally:
         conn.close()
-    #
-    # Use loop & retrieve
-    # def show_song()
-    #     for each row in lyric table
-    #     SELECT
-    #     lyric, EXTRACT(YEAR, MONTH, DAY
-    #     FROM
-    #     date_created) WHERE
-    #     date_deactivated is NOT
-    #     NULL
+
     #     if row number is divisible by 4:
     #         print('\n')
-    #   return all of that somehow.
 
     song_params = {
         "the_title" :  title,
