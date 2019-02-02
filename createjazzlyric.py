@@ -136,6 +136,8 @@ def create_song() -> str:
 
     song_params = {
         "the_title" :  title,
+        "a_lyric": a_lyric,
+        "the_date_created": date_created
     }
 
     try:
