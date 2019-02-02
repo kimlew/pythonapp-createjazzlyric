@@ -153,11 +153,11 @@ def create_song() -> str:
         for a_lyric in all_lyrics:
             print("Lyric row: ", a_lyric, "\n")
 
+        #     if resulting row number % 4 == 0:
+        #         print('\n')
+
     finally:
         conn.close()
-
-    #     if row number is divisible by 4:
-    #         print('\n')
 
     song_params = {
         "the_title" :  title,
