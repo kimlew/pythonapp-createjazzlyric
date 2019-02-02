@@ -136,15 +136,15 @@ def create_song() -> str:
         "the_title" :  title,
     }
 
-    # conn = mysql.connector.connect(**connDict)
-    # cursor = conn.cursor()
-    #
-    # nowdatetime = datetime.now()
-    #
-    # _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
-    # cursor.execute(_SQL, (lyric, nowdatetime))
-    #
-    # conn.commit()
+    try:
+        conn = mysql.connector.connect(**connDict)
+        cursor = conn.cursor()
+
+        _SQL = """SELECT"""
+
+        conn.commit()
+    finally:
+        conn.close()
     #
     # Use loop & retrieve
     # def show_song()
