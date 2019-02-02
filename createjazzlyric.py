@@ -134,12 +134,6 @@ def create_song() -> str:
     a_lyric = ''
     date_created = ''
 
-    song_params = {
-        "the_title" :  title,
-        "a_lyric": a_lyric,
-        "the_date_created": date_created
-    }
-
     try:
         conn = mysql.connector.connect(**connDict)
         cursor = conn.cursor()
@@ -163,6 +157,11 @@ def create_song() -> str:
     #         print('\n')
     #   return all of that somehow.
 
+    song_params = {
+        "the_title" :  title,
+        "a_lyric": a_lyric,
+        "the_date_created": date_created
+    }
     return render_template('show_song.html', the_song_params=song_params,)
 
 
