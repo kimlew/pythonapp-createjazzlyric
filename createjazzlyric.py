@@ -84,8 +84,8 @@ def create_lyric() -> str:
             " z" + ("e" * 8) + \
             "... "
 
-    conn = mysql.connector.connect(**connDict)
     try:
+        conn = mysql.connector.connect(**connDict)
         cursor = conn.cursor()
 
         nowdatetime = datetime.now()
