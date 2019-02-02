@@ -138,7 +138,11 @@ def create_song() -> str:
         conn = mysql.connector.connect(**connDict)
         cursor = conn.cursor()
 
-        _SQL = """SELECT"""
+        _SQL = """SELECT lyric, 
+            EXTRACT(YEAR FROM date_created), 
+            EXTRACT(MONTH FROM date_created), 
+            EXTRACT(DAY FROM date_created) 
+            FROM lyric WHERE date_deactivated IS NULL"""
 
         conn.commit()
     finally:
