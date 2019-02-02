@@ -153,8 +153,11 @@ def create_song() -> str:
         for a_lyric in all_lyrics:
             print("Lyric row: ", a_lyric, "\n")
 
-        #     if resulting row number % 4 == 0:
-        #         print('\n')
+        #     lyric_count = 0
+        #     blank_line  = '\n'
+        #     if lyric_count % 4 == 0:
+        #         print(a_lyric + blank_line)
+        #     print(a_lyric)
 
     finally:
         conn.close()
