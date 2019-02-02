@@ -146,6 +146,13 @@ def create_song() -> str:
 
         all_lyrics = cursor.fetchall()
 
+        # Test to see results at Terminal.
+        # Note: Result of SELECT - can reference with index, [1].
+        # Index does NOT refer to row in lyric table.
+        print("Total # of rows in lyric is: ", cursor.rowcount)
+        for a_lyric in all_lyrics:
+            print("Lyric row: ", a_lyric, "\n")
+
     finally:
         conn.close()
     #
