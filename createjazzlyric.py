@@ -144,6 +144,7 @@ def create_song() -> str:
             EXTRACT(DAY FROM date_created) 
             FROM lyric WHERE date_deactivated IS NULL"""
 
+        cursor.execute(_SQL)
         all_lyrics = cursor.fetchall()
 
         # Test to see results at Terminal.
