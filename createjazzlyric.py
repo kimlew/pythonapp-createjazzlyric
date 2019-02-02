@@ -131,6 +131,8 @@ def add_lyric_to_db() -> str:
 @app.route('/show_song', methods=['GET','POST'])
 def create_song() -> str:
     title = 'Jazz Song'
+    a_lyric = ''
+    date_created = ''
 
     song_params = {
         "the_title" :  title,
