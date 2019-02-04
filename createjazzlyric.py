@@ -100,13 +100,13 @@ def create_lyric() -> str:
 
     vowel_count = count_vowels(lyric)
     lyric_params = {
-        "the_page_title" :  page_title,
-        "the_vowel1" : vowel1,
-        "the_vowel2" : vowel2,
-        "the_vowel2_amount" : vowel2_amount,
-        "the_consonant" : consonant,
-        "the_lyric" : lyric,
-        "the_vowel_count" : vowel_count
+        "the_page_title":  page_title,
+        "the_vowel1": vowel1,
+        "the_vowel2": vowel2,
+        "the_vowel2_amount": vowel2_amount,
+        "the_consonant": consonant,
+        "the_lyric": lyric,
+        "the_vowel_count": vowel_count
     }
 
     return render_template('show_lyric.html', the_lyric_params=lyric_params,)
