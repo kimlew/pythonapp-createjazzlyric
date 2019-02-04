@@ -7,7 +7,8 @@
 {% for row in all_lyrics %}
     <p>{% for one_lyric in row %}
         {{one_lyric}}
-    {% endfor %}</p>
+    {% endfor %}
+    </p>
 {% endfor %}
 
 <p><a href="{{ url_for('create_lyric') }}">Back to New Jazz Lyric</a></p>
