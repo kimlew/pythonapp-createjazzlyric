@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h2><i>&#127927; &#127926; {{ the_song_params['the_title'] }} &#127926;
+<h2><i>&#127927; &#127926; {{ page_title }} &#127926;
     &#127930;</i></h2>
 
-<table>
-    <tr><td><h3>{{ the_song_params }}</h3></td></tr>
-</table>
+{% for row in all_lyrics %}
+    {% for one_lyric in row %}
+        <p>{{one_lyric}}</p>
+    {% endfor %}
+{% endfor %}
 
 <p><a href="{{ url_for('create_lyric') }}">Back to New Jazz Lyric</a></p>
 <p><a href="/">Go to Create a Jazz Lyric</a></p>
