@@ -21,7 +21,7 @@ def entry_page() -> 'html':
 
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
-    title = 'New Jazz Lyric'
+    page_title = 'Create Jazz Lyric'
     vowel_set = list('aeiouy')
     consonant_set = list('bcdfghijklmnpqrstvwxz')
 
@@ -99,7 +99,7 @@ def create_lyric() -> str:
 
     vowel_count = count_vowels(lyric)
     lyric_params = {
-        "the_title" :  title,
+        "the_page_title" :  page_title,
         "the_vowel1" : vowel1,
         "the_vowel2" : vowel2,
         "the_vowel2_amount" : vowel2_amount,
@@ -160,7 +160,7 @@ def create_song() -> str:
     finally:
         conn.close()
 
-    page_title = 'Jazz Song'
+    page_title = 'See Jazz Song'
 
     return render_template('show_song.html', page_title=page_title,
                            all_lyrics=all_lyrics)
