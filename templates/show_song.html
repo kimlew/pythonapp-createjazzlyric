@@ -5,9 +5,9 @@
     &#127930;</i></h2>
 
 {% for row in all_lyrics %}
-    {% for one_lyric in row %}
-        <p>{{one_lyric}}</p>
-    {% endfor %}
+    <p>{% for one_lyric in row %}
+        {{one_lyric}}
+    {% endfor %}</p>
 {% endfor %}
 
 <p><a href="{{ url_for('create_lyric') }}">Back to New Jazz Lyric</a></p>
