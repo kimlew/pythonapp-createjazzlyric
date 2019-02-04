@@ -15,13 +15,14 @@ def entry_page() -> 'html':
         "need_number_msg" : "",
         "need_consonant_msg" : ""
     }
-    return render_template('create_lyric.html', the_title='Create a Jazz '
-                                                         'Lyric', the_msg_params=msg_params,)
+    return render_template('create_lyric.html',
+                           the_title='Create a Jazz Lyric',
+                           the_msg_params=msg_params,)
 
 
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
-    page_title = 'Create Jazz Lyric'
+    page_title = 'See Jazz Lyric'
     vowel_set = list('aeiouy')
     consonant_set = list('bcdfghijklmnpqrstvwxz')
 
