@@ -130,16 +130,12 @@ def add_lyric_to_db() -> str:
 
 @app.route('/show_song', methods=['GET','POST'])
 def create_song() -> str:
-    title = 'Jazz Song'
-    a_lyric = ''
-    date_created = ''
-
     try:
         conn = mysql.connector.connect(**connDict)
         cursor = conn.cursor()
 
         _SQL = """SELECT lyric, 
-            EXTRACT(YEAR FROM date_created), 
+            EXTRACT(YEAR FROM date_created),
             EXTRACT(MONTH FROM date_created), 
             EXTRACT(DAY FROM date_created) 
             FROM lyric WHERE date_deactivated IS NULL
@@ -164,12 +160,10 @@ def create_song() -> str:
     finally:
         conn.close()
 
-    song_params = {
-        "the_title" :  title,
-        "a_lyric": a_lyric,
-        "the_date_created": date_created
-    }
-    return render_template('show_song.html', the_song_params=song_params,)
+    page_title = 'Jazz Song'
+
+    return render_template('show_song.html', page_title=page_title,
+                           all_lyrics=all_lyrics)
 
 
 if __name__ == '__main__':
