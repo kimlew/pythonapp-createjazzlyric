@@ -135,22 +135,24 @@ def create_song() -> str:
         conn = mysql.connector.connect(**connDict)
         cursor = conn.cursor()
 
-        _SQL = """SELECT lyric, 
-            EXTRACT(YEAR FROM date_created),
-            EXTRACT(MONTH FROM date_created), 
-            EXTRACT(DAY FROM date_created) 
+        # _SQL = """SELECT lyric,
+        #     EXTRACT(YEAR FROM date_created),
+        #     EXTRACT(MONTH FROM date_created),
+        #     EXTRACT(DAY FROM date_created)
+        #     FROM lyric WHERE date_deactivated IS NULL
+        #     ORDER BY date_created DESC"""
+        _SQL = """SELECT lyric, date_created
             FROM lyric WHERE date_deactivated IS NULL
             ORDER BY date_created DESC"""
-
         cursor.execute(_SQL)
         all_lyrics = cursor.fetchall()
 
         # Test to see results at Terminal.
         # Note: Result of SELECT - can reference with index, [1].
         # Index does NOT refer to row in lyric table.
-        print("Total # of rows in lyric is: ", cursor.rowcount)
-        for a_lyric in all_lyrics:
-            print("Lyric row: ", a_lyric, "\n")
+        # print("Total # of rows in lyric is: ", cursor.rowcount)
+        # for a_lyric in all_lyrics:
+        #     print("Lyric row: ", a_lyric, "\n")
 
         #     lyric_count = 0
         #     blank_line  = '\n'
