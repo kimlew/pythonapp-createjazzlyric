@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h2><i>&#127927; &#127926; {{ page_title }} &#127926;
-    &#127930;</i></h2>
+<h2><i>&#127927; &#127926; {{ page_title }} &#127926; &#127930;</i></h2>
 
-{% for one_lyric in all_lyrics %}
-    <p>{{ one_lyric[0] }} ({{ one_lyric[1].strftime('%Y-%b-%d') }})</p>
-{% endfor %}
+<table>
+    <tr>
+        <td>
+            {% for one_lyric in all_lyrics %}
+                <p>{{ one_lyric[0] }} ({{ one_lyric[1].strftime('%Y-%b-%d') }})</p>
+            {% endfor %}
+        </td>
 
-<p><a href="{{ url_for('create_lyric') }}">See Jazz Lyric</a></p>
-<p><a href="/">Create a Jazz Lyric</a></p>
+        <td valign="top">
+            <p><a href="{{ url_for('create_lyric') }}">See Jazz Lyric</a></p>
+            <p><a href="/">Create a Jazz Lyric</a></p>
+        </td>
+    </tr>
+</table>
+
 
 {% endblock %}
