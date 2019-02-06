@@ -53,8 +53,6 @@ def create_lyric() -> str:
 
     if vowel1 not in vowel_set:
         # Render entry page again & print('Enter a vowel.')
-        print("vowel1 is: ", vowel1)
-        print("vowel_set is: ", vowel_set)
         error_count += 1
         msg_params["need_vowel1_msg"] = need_vowel_msg
 
