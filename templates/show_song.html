@@ -6,7 +6,7 @@
 <table>
     <tr>
         <td>
-            {% count = 0 %}
+            {% set count = 0 %}
             {% for one_lyric in all_lyrics %}
 
                 {% if count % 4 == 0 %}
@@ -15,7 +15,7 @@
 
                 <p>{{ one_lyric[0] }} ({{ one_lyric[1].strftime('%Y-%b-%d') }})</p>
 
-                {% count += count+1 %}
+                {% set count += count+1 %}
             {% endfor %}
         </td>
 
