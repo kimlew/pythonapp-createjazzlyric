@@ -6,16 +6,16 @@
 <table>
     <tr>
         <td>
-            {% set count = 0 %}
+            {% set ns = namespace(count = 0) %}
             {% for one_lyric in all_lyrics %}
 
-                {% if count % 4 == 0 %}
+                {% if ns.count % 4 == 0 %}
                     <p> . </p>
                 {% endif %}
 
                 <p>{{ one_lyric[0] }} ({{ one_lyric[1].strftime('%Y-%b-%d') }})</p>
 
-                {% set count = count + 1 %}
+                {% set ns.count = ns.count + 1 %}
             {% endfor %}
         </td>
 
