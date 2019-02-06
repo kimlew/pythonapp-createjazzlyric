@@ -123,12 +123,6 @@ def count_vowels(lyric) -> str:
     return vowel_count
 
 
-def connect_to_db_create_cursor() -> str:
-    # Establish connection & create cursor.
-    conn = mysql.connector.connect(**connDict)
-    cursor = conn.cursor()
-
-
 @app.route('/show_song', methods=['GET','POST'])
 def create_song() -> str:
     try:
