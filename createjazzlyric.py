@@ -121,7 +121,7 @@ def count_vowels(lyric) -> str:
     return vowel_count
 
 
-@app.route('/show_song', methods=['GET','POST'])
+@app.route('/show_song', methods=['GET'])
 def create_song() -> str:
     try:
         conn = mysql.connector.connect(**connDict)
