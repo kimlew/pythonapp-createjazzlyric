@@ -164,22 +164,4 @@ def create_song() -> str:
 
 
 if __name__ == '__main__':
-    #  app.config['dbconfig'] = connDict
-
-    # Test with:
-    # Import driver, establish connection & create cursor.
-
-    # Put in main() temporarily - so runs immediately to see if MySQL works.
-    # If I put in Flask handler function that handles it for the page,
-    # I would have to run so it goes to the show_lyric page.
-
-    # conn = mysql.connector.connect(**connDict)
-    # cursor = conn.cursor()
-
-    # _SQL = """SHOW DATABASES"""
-    # cursor.execute(_SQL)
-    # res = cursor.fetchall()
-    # for row in res:
-    #     print(row)
-
     app.run(debug=True)
