@@ -140,20 +140,6 @@ def create_song() -> str:
             ORDER BY date_created DESC"""
         cursor.execute(_SQL)
         all_lyrics = cursor.fetchall()
-
-        # Test to see results at Terminal.
-        # Note: Result of SELECT - can reference with index, [1].
-        # Index does NOT refer to row in lyric table.
-        # print("Total # of rows in lyric is: ", cursor.rowcount)
-        # for a_lyric in all_lyrics:
-        #     print("Lyric row: ", a_lyric, "\n")
-
-        #     lyric_count = 0
-        #     blank_line  = '\n'
-        #     if lyric_count % 4 == 0:
-        #         print(a_lyric + blank_line)
-        #     print(a_lyric)
-
     finally:
         conn.close()
 
