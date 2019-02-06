@@ -123,7 +123,7 @@ def count_vowels(lyric) -> str:
     return vowel_count
 
 
-def add_lyric_to_db() -> str:
+def connect_to_db_create_cursor() -> str:
     # Establish connection & create cursor.
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
