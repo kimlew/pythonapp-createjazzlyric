@@ -9,8 +9,8 @@
             {% set ns = namespace(count = 0) %}
             {% for one_lyric in all_lyrics %}
 
-                {% if ns.count % 4 == 0 %}
-                    <p> . </p>
+                {% if ns.count > 1 and ns.count % 4 == 0 %}
+                    </br>
                 {% endif %}
 
                 <p>{{ one_lyric[0] }} ({{ one_lyric[1].strftime('%Y-%b-%d') }})</p>
