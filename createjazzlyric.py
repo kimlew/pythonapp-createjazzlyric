@@ -10,10 +10,10 @@ app = Flask(__name__)
 @app.route('/entry')
 def entry_page() -> 'html':
     msg_params = {
-        "need_vowel1_msg" : "",
+        "need_vowel1_msg": "",
         "need_vowel2_msg": "",
-        "need_number_msg" : "",
-        "need_consonant_msg" : ""
+        "need_number_msg": "",
+        "need_consonant_msg": ""
     }
     return render_template('create_lyric.html',
                            the_title='Create a Jazz Lyric',
