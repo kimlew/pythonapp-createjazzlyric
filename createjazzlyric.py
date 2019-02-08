@@ -83,10 +83,10 @@ def create_lyric() -> str:
             " z" + ("e" * 8) + \
             "... "
 
-    try:
-        conn = mysql.connector.connect(**connDict)
-        cursor = conn.cursor()
+    conn = mysql.connector.connect(**connDict)
+    cursor = conn.cursor()
 
+    try:
         nowdatetime = datetime.now()
 
         _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
@@ -123,10 +123,10 @@ def count_vowels(lyric) -> str:
 
 @app.route('/show_song', methods=['GET'])
 def create_song() -> str:
-    try:
-        conn = mysql.connector.connect(**connDict)
-        cursor = conn.cursor()
+    conn = mysql.connector.connect(**connDict)
+    cursor = conn.cursor()
 
+    try:
         _SQL = """SELECT lyric, date_created
             FROM lyric WHERE date_deactivated IS NULL
             ORDER BY date_created DESC"""
