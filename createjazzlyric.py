@@ -79,7 +79,7 @@ def create_lyric() -> str:
 
     # Shoo dap ba diii *eeeeeee...
     lyric = " Shooo" +\
-            " d" + (vowel1) + "p" +\
+            " d" + vowel1 + "p" +\
             " b" + (vowel1 * 2) + " " +\
             consonant + (vowel2 * int(vowel2_amount)) +\
             " z" + ("e" * 8) + \
