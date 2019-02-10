@@ -17,3 +17,14 @@ This app has been tested with:
 - Jinja2 2.10
 - mysql-connector-python 8.0.12
 - mysql 8.0.13
+
+1. Clone the files and folders in this repo.
+
+2. In the Terminal, start the python web server with the command: 
+python3 createjazzlyric.py
+
+3. In the browser, go to: 
+http://localhost:5000/
+
+Or to view a deployed version, go to: 
+http://kimlew.pythonanywhere.com/
