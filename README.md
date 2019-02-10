@@ -18,6 +18,7 @@ This app has been tested with:
 - mysql-connector-python 8.0.12
 - mysql 8.0.13
 
+To run the file locally:
 1. Clone the files and folders in this repo.
 
 2. In the Terminal, start the python web server with the command: 
