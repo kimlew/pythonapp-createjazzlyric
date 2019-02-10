@@ -22,7 +22,7 @@ To run the file locally:
 1. Clone the files and folders in this repo.
 
 2. In the Terminal, start the python web server with the command: 
-python3 createjazzlyric.py
+``` python3 createjazzlyric.py ```
 
 3. In the browser, go to: 
 http://localhost:5000/
