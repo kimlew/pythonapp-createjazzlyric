@@ -71,8 +71,7 @@ def create_lyric() -> str:
         error_count += 1
         msg_params["need_consonant_msg"] = need_consonant_msg
 
-    if error_count == 1 or error_count == 2 or error_count == 3 or \
-            error_count == 4:
+    if error_count > 0:
         return render_template('create_lyric.html',
                                the_title='Create a Jazz Lyric',
                                the_msg_params=msg_params, )
