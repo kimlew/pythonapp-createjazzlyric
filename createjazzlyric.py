@@ -56,34 +56,31 @@ def create_lyric() -> str:
         error_count += 1
         msg_params["need_vowel1_msg"] = need_vowel_msg
 
-    elif vowel2 not in vowel_set:
+    if vowel2 not in vowel_set:
         # Render entry page again & show, 'Enter a vowel.'
         error_count += 1
         msg_params["need_vowel2_msg"] = need_vowel_msg
 
-    elif vowel2_amount < 3 or vowel2_amount > 9:
+    if vowel2_amount < 3 or vowel2_amount > 9:
         # Render entry page again & show, 'Enter a number from 3-9.'
         error_count += 1
         msg_params["need_number_msg"] = need_number_msg
 
-    elif consonant not in consonant_set:
+    if consonant not in consonant_set:
         # Render entry page again & show, 'Enter a consonant.'
         error_count += 1
         msg_params["need_consonant_msg"] = need_consonant_msg
 
-    if error_count == 1 or error_count == 2 or error_count == 3 or \
-            error_count == 4:
+    if error_count > 0:
         return render_template('create_lyric.html',
                                the_title='Create a Jazz Lyric',
                                the_msg_params=msg_params, )
 
-    # Shoo dap ba diii *eeeeeee...
-    lyric = " Shooo" +\
-            " d" + vowel1 + "p" +\
-            " b" + (vowel1 * 2) + " " +\
-            consonant + (vowel2 * int(vowel2_amount)) +\
-            " z" + ("e" * 8) + \
-            "... "
+    lyric = " Shooo d%sp b%s %s z%s..." % (
+        vowel1,
+        vowel1 * 2,
+        consonant + (vowel2 * int(vowel2_amount)),
+        "e" * 8)
 
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
