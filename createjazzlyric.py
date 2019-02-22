@@ -88,8 +88,8 @@ def create_lyric() -> str:
     try:
         nowdatetime = datetime.now()
 
-        _SQL = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
-        cursor.execute(_SQL, (lyric, nowdatetime))
+        sql = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
+        cursor.execute(sql, (lyric, nowdatetime))
 
         conn.commit()
     finally:
@@ -126,10 +126,10 @@ def create_song() -> str:
     cursor = conn.cursor()
 
     try:
-        _SQL = """SELECT lyric, date_created
+        sql = """SELECT lyric, date_created
             FROM lyric WHERE date_deactivated IS NULL
             ORDER BY date_created DESC"""
-        cursor.execute(_SQL)
+        cursor.execute(sql)
         all_lyrics = cursor.fetchall()
     finally:
         conn.close()
