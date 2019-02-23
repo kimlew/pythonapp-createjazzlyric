@@ -76,11 +76,13 @@ def create_lyric() -> str:
                                the_title='Create a Jazz Lyric',
                                the_msg_params=msg_params, )
 
-    lyric = " Shooo d%sp b%s %s z%s..." % (
-        vowel1,
-        vowel1 * 2,
-        consonant + (vowel2 * int(vowel2_amount)),
-        "e" * 8)
+    lyric = (
+        f" Shooo "
+        f"d{vowel1}p "
+        f"b{vowel1 * 2} "
+        f"{consonant}{vowel2 * int(vowel2_amount)} "
+        f"z{'e' * 8}... "
+    )
 
     conn = mysql.connector.connect(**connDict)
     cursor = conn.cursor()
