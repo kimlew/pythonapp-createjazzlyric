@@ -1,9 +1,15 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from datetime import datetime
 from connVarsDict import connDict
 import mysql.connector
 
 app = Flask(__name__)
+
+
+@app.before_request
+def before_request():
+    g.conn = mysql.connector.connect(**connDict)
+    # g.db = client.database
 
 
 @app.route('/')
@@ -84,8 +90,8 @@ def create_lyric() -> str:
         f"z{'e' * 8}... "
     )
 
-    conn = mysql.connector.connect(**connDict)
-    cursor = conn.cursor()
+    # conn = mysql.connector.connect(**connDict)
+    cursor = g.conn.cursor()
 
     try:
         nowdatetime = datetime.now()
@@ -93,9 +99,9 @@ def create_lyric() -> str:
         sql = """INSERT INTO lyric(lyric, date_created) VALUES (%s, %s)"""
         cursor.execute(sql, (lyric, nowdatetime))
 
-        conn.commit()
+        g.conn.commit()
     finally:
-        conn.close()
+        g.conn.close()
 
     vowel_count = count_vowels(lyric)
     lyric_params = {
@@ -124,8 +130,8 @@ def count_vowels(lyric) -> str:
 
 @app.route('/show_song', methods=['GET'])
 def create_song() -> str:
-    conn = mysql.connector.connect(**connDict)
-    cursor = conn.cursor()
+    # conn = mysql.connector.connect(**connDict)
+    cursor = g.conn.cursor()
 
     try:
         sql = """SELECT lyric, date_created
@@ -134,7 +140,7 @@ def create_song() -> str:
         cursor.execute(sql)
         all_lyrics = cursor.fetchall()
     finally:
-        conn.close()
+        g.conn.close()
 
     page_title = 'See Jazz Song'
 
