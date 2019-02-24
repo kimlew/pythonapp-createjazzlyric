@@ -3,13 +3,13 @@ from datetime import datetime
 from connVarsDict import connDict
 import mysql.connector
 
+
 app = Flask(__name__)
 
 
 @app.before_request
 def before_request():
     g.conn = mysql.connector.connect(**connDict)
-    # g.db = client.database
 
 
 @app.route('/')
@@ -40,7 +40,7 @@ def create_lyric() -> str:
     vowel2 = request.form['vowel2'].lower()
     vowel2_amount = 0
 
-    # try-catch block for when vowel2_amount field is empty string, ''.
+    # Try-Except-Finally block for when vowel2_amount field is ''.
     try:
         vowel2_amount = int(request.form['vowel2_amount'])
     except Exception as e:
@@ -90,7 +90,6 @@ def create_lyric() -> str:
         f"z{'e' * 8}... "
     )
 
-    # conn = mysql.connector.connect(**connDict)
     cursor = g.conn.cursor()
 
     try:
@@ -130,7 +129,6 @@ def count_vowels(lyric) -> str:
 
 @app.route('/show_song', methods=['GET'])
 def create_song() -> str:
-    # conn = mysql.connector.connect(**connDict)
     cursor = g.conn.cursor()
 
     try:
