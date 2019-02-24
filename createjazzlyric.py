@@ -120,12 +120,7 @@ def count_vowels(lyric) -> str:
     vowels = set('aeiouy')
     vowel_count = 0
 
-    for item in lyric:
-        if item in vowels:
-            vowel_count = vowel_count + 1
-
-    return vowel_count
-
+    return len([vowel for vowel in lyric if vowel in VOWEL_SET])
 
 @app.route('/show_song', methods=['GET'])
 def show_song() -> str:
