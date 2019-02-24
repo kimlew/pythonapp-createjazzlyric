@@ -3,6 +3,8 @@ from datetime import datetime
 from connVarsDict import connDict
 import mysql.connector
 
+VOWEL_SET = list('aeiouy')
+CONSONANT_SET = list('bcdfghijklmnpqrstvwxz')
 
 app = Flask(__name__)
 
@@ -29,8 +31,6 @@ def entry_page() -> 'str':
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
     page_title = 'See Jazz Lyric'
-    vowel_set = list('aeiouy')
-    consonant_set = list('bcdfghijklmnpqrstvwxz')
 
     need_vowel_msg = 'You must enter a vowel.'
     need_number_msg = 'You must enter a number from 3-9.'
@@ -57,12 +57,12 @@ def create_lyric() -> str:
         "need_consonant_msg": ""
     }
 
-    if vowel1 not in vowel_set:
+    if vowel1 not in VOWEL_SET:
         # Render entry page again & show, 'Enter a vowel.'
         error_count += 1
         msg_params["need_vowel1_msg"] = need_vowel_msg
 
-    if vowel2 not in vowel_set:
+    if vowel2 not in VOWEL_SET:
         # Render entry page again & show, 'Enter a vowel.'
         error_count += 1
         msg_params["need_vowel2_msg"] = need_vowel_msg
@@ -72,7 +72,7 @@ def create_lyric() -> str:
         error_count += 1
         msg_params["need_number_msg"] = need_number_msg
 
-    if consonant not in consonant_set:
+    if consonant not in CONSONANT_SET:
         # Render entry page again & show, 'Enter a consonant.'
         error_count += 1
         msg_params["need_consonant_msg"] = need_consonant_msg
