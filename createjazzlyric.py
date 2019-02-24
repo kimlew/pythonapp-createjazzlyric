@@ -128,7 +128,7 @@ def count_vowels(lyric) -> str:
 
 
 @app.route('/show_song', methods=['GET'])
-def create_song() -> str:
+def show_song() -> str:
     cursor = g.conn.cursor()
 
     try:
