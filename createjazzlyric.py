@@ -32,10 +32,6 @@ def entry_page() -> 'str':
 def create_lyric() -> str:
     page_title = 'See Jazz Lyric'
 
-    need_vowel_msg = 'You must enter a vowel.'
-    need_number_msg = 'You must enter a number from 3-9.'
-    need_consonant_msg = 'You must enter a consonant.'
-
     vowel1 = request.form['vowel1'].lower()
     vowel2 = request.form['vowel2'].lower()
     vowel2_amount = 0
@@ -48,35 +44,8 @@ def create_lyric() -> str:
 
     consonant = request.form['consonant'].lower()
 
-    error_count = 0
-
-    msg_params = {
-        "need_vowel1_msg": "",
-        "need_vowel2_msg": "",
-        "need_number_msg": "",
-        "need_consonant_msg": ""
-    }
-
-    if vowel1 not in VOWEL_SET:
-        # Render entry page again & show, 'Enter a vowel.'
-        error_count += 1
-        msg_params["need_vowel1_msg"] = need_vowel_msg
-
-    if vowel2 not in VOWEL_SET:
-        # Render entry page again & show, 'Enter a vowel.'
-        error_count += 1
-        msg_params["need_vowel2_msg"] = need_vowel_msg
-
-    if vowel2_amount < 3 or vowel2_amount > 9:
-        # Render entry page again & show, 'Enter a number from 3-9.'
-        error_count += 1
-        msg_params["need_number_msg"] = need_number_msg
-
-    if consonant not in CONSONANT_SET:
-        # Render entry page again & show, 'Enter a consonant.'
-        error_count += 1
-        msg_params["need_consonant_msg"] = need_consonant_msg
-
+    error_count, msg_params = validate_lyric_form(vowel1, vowel2,
+                                                  vowel2_amount, consonant)
     if error_count > 0:
         return render_template('create_lyric.html',
                                the_title='Create a Jazz Lyric',
@@ -114,6 +83,43 @@ def create_lyric() -> str:
     }
 
     return render_template('show_lyric.html', the_lyric_params=lyric_params,)
+
+
+def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
+    msg_params = {
+        "need_vowel1_msg": "",
+        "need_vowel2_msg": "",
+        "need_number_msg": "",
+        "need_consonant_msg": ""
+    }
+
+    need_vowel_msg = 'You must enter a vowel.'
+    need_number_msg = 'You must enter a number from 3-9.'
+    need_consonant_msg = 'You must enter a consonant.'
+
+    error_count = 0
+
+    if vowel1 not in VOWEL_SET:
+        # Render entry page again & show, 'Enter a vowel.'
+        error_count += 1
+        msg_params["need_vowel1_msg"] = need_vowel_msg
+
+    if vowel2 not in VOWEL_SET:
+        # Render entry page again & show, 'Enter a vowel.'
+        error_count += 1
+        msg_params["need_vowel2_msg"] = need_vowel_msg
+
+    if vowel2_amount < 3 or vowel2_amount > 9:
+        # Render entry page again & show, 'Enter a number from 3-9.'
+        error_count += 1
+        msg_params["need_number_msg"] = need_number_msg
+
+    if consonant not in CONSONANT_SET:
+        # Render entry page again & show, 'Enter a consonant.'
+        error_count += 1
+        msg_params["need_consonant_msg"] = need_consonant_msg
+
+    return (error_count, msg_params)
 
 
 def count_vowels(lyric) -> str:
