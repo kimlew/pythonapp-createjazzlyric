@@ -123,10 +123,8 @@ def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
 
 
 def count_vowels(lyric) -> str:
-    vowels = set(VOWEL_SET)
-    vowel_count = 0
-
     return len([vowel for vowel in lyric if vowel in VOWEL_SET])
+
 
 @app.route('/show_song', methods=['GET'])
 def show_song() -> str:
