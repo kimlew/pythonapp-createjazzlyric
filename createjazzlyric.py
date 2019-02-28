@@ -3,8 +3,8 @@ from datetime import datetime
 from connVarsDict import connDict
 import mysql.connector
 
-VOWEL_SET = list('aeiouy')
-CONSONANT_SET = list('bcdfghijklmnpqrstvwxz')
+VOWEL_LIST = list('aeiouy')
+CONSONANT_LIST = list('bcdfghijklmnpqrstvwxz')
 
 app = Flask(__name__)
 
@@ -99,12 +99,12 @@ def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
 
     error_count = 0
 
-    if vowel1 not in VOWEL_SET:
+    if vowel1 not in VOWEL_LIST:
         # Render entry page again & show, 'Enter a vowel.'
         error_count += 1
         msg_params["need_vowel1_msg"] = need_vowel_msg
 
-    if vowel2 not in VOWEL_SET:
+    if vowel2 not in VOWEL_LIST:
         # Render entry page again & show, 'Enter a vowel.'
         error_count += 1
         msg_params["need_vowel2_msg"] = need_vowel_msg
@@ -114,7 +114,7 @@ def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
         error_count += 1
         msg_params["need_number_msg"] = need_number_msg
 
-    if consonant not in CONSONANT_SET:
+    if consonant not in CONSONANT_LIST:
         # Render entry page again & show, 'Enter a consonant.'
         error_count += 1
         msg_params["need_consonant_msg"] = need_consonant_msg
@@ -123,7 +123,7 @@ def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
 
 
 def count_vowels(lyric) -> str:
-    return len([vowel for vowel in lyric if vowel in VOWEL_SET])
+    return len([vowel for vowel in lyric if vowel in VOWEL_LIST])
 
 
 @app.route('/show_song', methods=['GET'])
