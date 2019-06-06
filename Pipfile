@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 mysql-connector-python = "*"
-jinja = "*"
+Jinja2 = ">=2.10.1"
 
 [requires]
 python_version = "3.7"
