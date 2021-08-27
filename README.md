@@ -14,7 +14,7 @@ Refer to the Pipfile for the requirements and dependencies.
 This app has been tested with:
 - Python 3.7	
 - Flask 1.02
-- Jinja2 2.10
+- Jinja2 2.11.3
 - mysql-connector-python 8.0.12
 - mysql 8.0.13
 
