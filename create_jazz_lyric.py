@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, g
+''' Python Flask app that lets you input values to make a jazz lyric. '''
+
 from datetime import datetime
-from connVarsDict import connDict
+from flask import Flask, render_template, request, g
 import mysql.connector
+from conn_vars_dict import conn_dict
 
 VOWEL_LIST = list('aeiouy')
 CONSONANT_LIST = list('bcdfghijklmnpqrstvwxz')
@@ -11,12 +13,14 @@ app = Flask(__name__)
 
 @app.before_request
 def before_request():
-    g.conn = mysql.connector.connect(**connDict)
+    ''' Gets the connection variables to connect to MySQL. '''
+    g.conn = mysql.connector.connect(**conn_dict)
 
 
 @app.route('/')
 @app.route('/entry')
-def entry_page() -> 'str':
+def entry_page() -> str:
+    ''' Creates the Create a Jazz Lyric page. '''
     msg_params = {
         "need_vowel1_msg": "",
         "need_vowel2_msg": "",
@@ -30,6 +34,8 @@ def entry_page() -> 'str':
 
 @app.route('/show_lyric', methods=['POST'])
 def create_lyric() -> str:
+    ''' Converts the inputs to lowercase, makes sure the correct type is
+    entered & saves the lyric into the MySQL database. '''
     page_title = 'See Jazz Lyric'
 
     vowel1 = request.form['vowel1'].lower()
@@ -39,8 +45,8 @@ def create_lyric() -> str:
     # Try-Except-Finally block for when vowel2_amount field is ''.
     try:
         vowel2_amount = int(request.form['vowel2_amount'])
-    except Exception as e:
-        print(e)
+    except ValueError as val_err:
+        print(val_err)
 
     consonant = request.form['consonant'].lower()
 
@@ -86,6 +92,7 @@ def create_lyric() -> str:
 
 
 def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
+    ''' Makes sure vowels and consonants are correctly entered in fields. '''
     msg_params = {
         "need_vowel1_msg": "",
         "need_vowel2_msg": "",
@@ -123,11 +130,13 @@ def validate_lyric_form(vowel1, vowel2, vowel2_amount, consonant):
 
 
 def count_vowels(lyric) -> str:
+    ''' Checks if is a vowel & returns the number of vowels. '''
     return len([vowel for vowel in lyric if vowel in VOWEL_LIST])
 
 
 @app.route('/show_song', methods=['GET'])
 def show_song() -> str:
+    ''' Displays all the lyrics in the MySQL database as a song. '''
     cursor = g.conn.cursor()
 
     try:
@@ -146,4 +155,4 @@ def show_song() -> str:
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
