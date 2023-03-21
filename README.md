@@ -83,13 +83,13 @@ Note: To **run locally** and for **deployment to PythonAnywhere**, use `pip3` & 
 
   `pip3 freeze > requirements.txt`
 
-1. Create an environment with Python 3.10 and start/activate the environment:
+3. Create an environment with Python 3.10 and start/activate the environment:
   ```
   python3.10 -m venv .venv
   source .venv/bin/activate
   ```
 
-1. Define 4 environment variables with an appropriate host and MySQL database values, e.g.,
+4. Define 4 environment variables with an appropriate host and MySQL database values, e.g.,
   ```
   export DB_HOST=localhost
   export DB_NAME=lyric_db
