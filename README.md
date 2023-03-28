@@ -74,22 +74,35 @@ mysql -u root -p
 5. Type `exit;` to exit MySQL.
 
    
-#### D. Create a virtual environment, get packages and dependencies, and run the app
-Note: To **run locally** and for **deployment to PythonAnywhere**, use `pip3` & `requirements.txt`. For *development*, use *`pipenv`* to create a `Pipfile`, install packages and update the `Pipfile.lock`.
+#### D. Create a virtual environment, install packages and dependencies, and run the app
 
 1. Make sure you are still in the project directory, `pythonapp-createjazzlyric`.
 
-2. If `requirements.txt` is missing, create it from the `Pipfile` with:
-
-  `pip3 freeze > requirements.txt`
-
-3. Create an environment with Python 3.10 and start/activate the environment:
+2. Create an environment with Python 3.10 and start/activate the environment:
   ```
   python3.10 -m venv .venv
-  source .venv/bin/activate
+  source .venv/bin/activate         
   ```
 
-4. Define 4 environment variables with an appropriate host and MySQL database values, e.g.,
+3. Make sure you have a recent version of `pip3`. Then install the project package requirements and dependencies with:
+
+  `pip3 install -r requirements.txt`
+
+4. Verify the correct versions Python & Flask are installed with:
+
+  `flask --version`
+
+  You should see something like:
+
+  ```
+  (.venv) mac$ flask --version
+  Python 3.10.10
+  Flask 2.2.3
+  Werkzeug 2.2.3
+  ```
+
+5. Define 4 environment variables with an appropriate host and MySQL database values, e.g., run each of these commands:
+
   ```
   export DB_HOST=localhost
   export DB_NAME=lyric_db
@@ -99,30 +112,17 @@ Note: To **run locally** and for **deployment to PythonAnywhere**, use `pip3` & 
 
   Note: The `conn_dict` variable in `conn_vars_dict.py` assigns the values to corresponding `os` module variables that the script uses.
 
-5. Verify they are in the list of environment variables with:
+6. Verify they are in the list of environment variables with:
 
   `export -p`
 
-6. Install the project package requirements and dependencies with:
 
-  `pip3 install -r requirements.txt`
-
-7. Verify Flask has been installed in the environment with:
-   
-  `flask --version`
-
-  You should see something like:
-  ```
-  (.venv) mac$ flask --version
-  Python 3.10.10
-  Flask 2.2.3
-  Werkzeug 2.2.3
-  ```
-
-8.  Start the web app with:
+7.  Start the web app with:
  
   `python3 create_jazz_lyric.py`
 
-9. In the browser, go to:
+8. See the app in the browser at:
   
   `http://localhost:5000/`
+
+  Note: The app might not work in Chrome or Opera. If it doesn't, use **Firefox**.
