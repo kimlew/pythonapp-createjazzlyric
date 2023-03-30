@@ -33,12 +33,6 @@ The MySQL installation and setup differs on a Mac, on Linux, etc. Refer to sites
 #### B. Clone the project files from GitHub.com and change to the project directory
 
 1. Clone the repository from GitHub.com:
-  
-  **For PR**:
-
-  `git clone -b python3-10_pipenv https://github.com/kimlew/pythonapp-createjazzlyric`
-
-  **After PR merged**:
 
   `git clone https://github.com/kimlew/pythonapp-createjazzlyric`
 
